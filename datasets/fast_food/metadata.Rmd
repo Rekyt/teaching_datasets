@@ -1,0 +1,52 @@
+---
+title: "Nutriments des menus de restauration rapide"
+output:
+  pdf_document:
+    latex_engine: xelatex
+---
+
+# Contexte des données
+
+Ces données contiennent les données nutrionnelles proposés par les plus grandes marques de restauration rapide étatsuniennes. À savoir : MacDonald's, Burger King, Wendy's, Kentucky Fried Chicken (KFC), Taco Bell et Pizza Hut. Ces données sont issues d'une base de données officielle sur le contenu en nutriment des aliments.
+
+Ces données pourraient être pertinentes pour comparer différents produits et différentes marques en fonction de leurs contenus en nutriment.
+
+## Descriptif des données
+
+Ce jeu de données contient **1136 lignes** réparties en **14 colonnes** dont voici la description:
+
+Nom de la colonne      | Type de variable     | Description
+--------               | ----------           | --------------------------------------
+`Company`              | Chaîne de caractères | Nom de la marque de fast food
+`Item`                 | Chaîne de caractères | Nom de la Boisson/Plat concerné
+`Calories`             | Nombre réel          | Nombre de calories total
+`Calories from Fat`    | Nombre réel          | Nombre de calories lié à la graisse
+`Total Fat (g)`        | Nombre réel          | Quantité de lipides en grammes
+`Saturated Fat (g)`    | Nombre réel          | Quantité de graisse saturé en grammes
+`Trans Fat (g)`        | Nombre réel          | Quantité de graisse insaturé en grammes
+`Cholesterol (mg)`     | Nombre réel          | Quantité de cholestérol en milligrammes
+`Sodium (mg)`          | Nombre réel          | Quantité de sodium en milligrammes
+`Carbs (g)`            | Nombre réel          | Quantité de glucides en grammes
+`Fiber (g)`            | Nombre réel          | Quantité de fibres en grammes
+`Sugars (g)`           | Nombre réel          | Quantité de sucres en grammes
+`Protein (g)`          | Nombre réel          | Quantité de protéines en grammes
+`Weight Watchers Pnts` | Nombre réel          | Nombre de points Weight Watchers (programme d'amincissement, voir [fiche Wikipédia](https://fr.wikipedia.org/wiki/Weight_Watchers), voir aussi explications ci-dessous)
+
+
+## Calcul des points *Weight Watchers*
+
+Le programme *Weight Watchers* promeut une méthodologie simple pour identifier les aliments à privilégier pour composer un régime alimentaire sain à l'aide d'une échelle de points qui permet d'identifier les aliments à privilégier.
+
+La formule généralement utilisée pour calculer le nombre de points associés à un aliment est la suivante :
+
+$$
+\text{Points Weight Watchers} = \frac{\text{calories (en g)}}{50} + \frac{\text{Lipides (en g)}}{12} - \frac{\text{Fibres (en g)}}{5}
+$$
+
+Outre le fait que ce calcul de points néglige le contenu en vitamines ou en autres nutriments des aliments, le programme Weight Watchers est aussi critiqué pour ses positionnements spécifiques : inclusion des menus de MacDonald's dans ses calculs, focalisation importante sur la quantification, focalisation sur les calories plutôt que sur le rééquilibrage alimentaire, etc.
+
+L'algorithme de calcul des points peut évoluer mais **n'est pas public** donc certaines personnes essaient d'en trouver les variations. Si la formule ci-dessus ne correspond au calcul, il est possible d'utiliser des [formules de calcul alternatives](https://www.reddit.com/r/weightwatchers/comments/r7f0o9/point_algorithm/).
+
+## Référence
+
+https://www.nutrition-charts.com/

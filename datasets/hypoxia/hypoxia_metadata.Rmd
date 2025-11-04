@@ -1,0 +1,113 @@
+---
+title: "Apnée du sommeil et hypoxie"
+output:
+  pdf_document:
+    latex_engine: xelatex
+linkcolor: blue
+---
+
+
+# Contexte des données
+
+L’apnée du sommeil, littéralement "sans respiration", se produit pendant le sommeil lorsque
+la respiration devient très superficielle ou s’arrête brièvement. Les épisodes d’apnée du sommeil
+durent généralement de 20 à 40 secondes et peuvent se produire plusieurs fois par nuit chez
+certaines personnes. Il existe différents types d’apnée du sommeil, dont l’apnée obstructive du
+sommeil (AOS), qui fait l’objet de cet ensemble de données. L’AOS a des causes physiques ;
+il se produit lorsque quelque chose bloque partiellement ou complètement les voies aériennes
+supérieures pendant le sommeil. L’AOS est généralement associé à une réduction de la saturation
+en oxygène du sang. Notamment, environ 30 % de la population générale souffre d’AOS.
+
+L’apnée obstructive du sommeil se caractérise par des événements spécifiques et leur gravité.
+Les événements d’AOS sont de deux types : une apnée, caractérisée par un arrêt complet du flux
+d’air pendant au moins 10 secondes, ou une hypopnée dans laquelle le flux d’air diminue de 50
+% pendant 10 secondes ou diminue de 30 % s’il y a une diminution associée de la saturation en
+oxygène ou un réveil du sommeil. La gravité de l’apnée du sommeil correspond à la fréquence
+des événements par heure et est évaluée à l’aide de l’indice d’apnée-hypopnée (IAH). Un IAH
+inférieur à 5 est considéré comme normal. Un IAH de 5 à 14 est léger, de 15 à 29 est modéré et
+30 événements ou plus par heure caractérisent une apnée du sommeil sévère.
+
+En raison de l’AOS, les niveaux d’oxygénation nocturne sont souvent inférieurs à la normale.
+Deux mesures courantes sont le pourcentage du temps total de sommeil passé à une Sao2 inférieure
+à 90 % et la Sao2 nocturne minimale indiquée dans les rapports de polysomnographie.
+L’AOS est préoccupant en raison de sa relation avec les maladies cardiovasculaires, un diagnostic
+de maladie modérée à sévère (IAH 15) ayant été identifié comme un facteur de risque
+indépendant pour la mortalité toutes causes confondues et la mortalité cardiovasculaire. Les
+patients souffrant d’AOS présentent une augmentation chronique de l’activité sympathique adrénergique (système impliqué dans le maintien de l’homéostasie) qui est considérée comme l’un
+des principaux mécanismes de développement des problèmes de santé cardiovasculaire dans
+cette population. On suppose qu’une telle instabilité hémodynamique augmente le risque de
+morbidité peropératoire et/ou postopératoire chez les patients souffrant de AOS qui subissent
+une intervention chirurgicale.
+
+## Présentation de l'étude
+
+Il s’agit d’une étude sur la pression artérielle moyenne peropératoire chez les patients souffrant
+d’apnée obstructive du sommeil qui subissent une intervention chirurgicale de perte de
+poids (bariatrique).
+
+Les participants sont 281 patients adultes chez qui on a diagnostiqué une apnée obstructive
+du sommeil dans les deux ans précédant leur chirurgie bariatrique. Outre la pression artérielle
+moyenne, l’ensemble des données comprend des informations sur les caractéristiques démographiques,
+l’état d’oxygénation nocturne, les comorbidités, le type et la durée de l’intervention chirurgicale,
+les vasopresseurs et la fréquence cardiaque. Les données sont nettoyées et contiennent
+quelques données manquantes. Il n’y a pas de valeurs aberrantes ou de problèmes de données.
+
+# Descriptif des données
+
+14 colonnes et 615 lignes:
+
+Nom de la colonne      | Type de variable     | Description
+--------------         | ----------           | --------------------------------------
+`Age`                  | Nombre réel          | Âge en années
+`Female`               | Nombre entier        | Sexe du patient (`1` = femme, `0` = homme)
+`BMI`                  | Nombre réel          | Indice de masse corporelle
+`Sleeptime`            | Nombre réel          | Temps passé à SAO2 < 90
+`Min.Sao2`             | Nombre entier        | Minimum nocturne de SAO2
+`AHI`                  | Nombre entier        | Indice d'apnée / hypopnée (en anglais, AHI) (`1` = (AHI < 5) ; `2` = (5 ≤ AHI < 15) ; `3` = (15 ≤AHI < 30) ; `4` = (AHI ≥ 30))
+`Smoking`              | Nombre entier        | Statut tabagique (`1` = fumeur, `0` = non fumeur)
+`Diabetes`             | Nombre entier        | Statut diabétique (`1` = oui, `0` = non)
+`Hyper`                | Nombre entier        | Hypertension (`1` = oui, `0` = non)
+`CAD`                  | Nombre entier        | Maladie coronarienne (`1` = oui, `0` = non)
+`Preop.AntiHyper.Med`  | Nombre entier        | Médicament contre la tension avant opération (`1` = oui, `0` = non)
+`Type_Surg`            | Nombre entier        | Type d'intervation chirurgicale (`1` = gastro-entérostomie, `2` = procédure de restriction gastrique, `3` = gastroplastie, `4` = retrait d’un dispositif de restriction gastrique)
+`Duration_of_Surg`     | Nombre réel          | Durée de l'intervention en heures
+`Intraop_AntiHyper_Med`| Nombre entier        | Médicaments antihypertenseurs pendant l'opération (`1` = oui, `0` = non)
+`Vasopressor`          | Nombre entier        | Utilisation des vasopresseurs pendant l'opération (`1` = oui, `0` = non)
+`Morphine`             | Nombre réel          | Utilisation de morphine pendant l'opération (`1` = oui, `0` = non)
+`TWA.MAP`              | Nombre réel          | Taux moyen de pression artérielle pendant l'opération
+`TWA.HR`               | Nombre réel          | Fréquence cardiaque moyenne pendant l'opération
+
+
+# Travail demandé
+
+## Objectifs
+
+Plusieurs études peuvent être envisagées :
+
+- Etudier les liens entre les différentes variables, c’est à dire à identifier les variables pertinentes qui permettent de séparer des groupes.
+- On pourra chercher à prédire le minimum de Sao2 nocture en fonction des variables
+proposées.
+- On pourra chercher à prédire l’apnée sévère en fonction des variables proposées.
+
+Les techniques pouvant être utilisée dans le cadre de cette étude sont principalement les
+modèles linéaires généralisés et les approches par classification, mais les ACP, ACM et kmeans
+peuvent aussi être utilisés.
+
+
+## Exercice à rendre
+
+Vous présenterez vos résultats lors de la dernière séance le 4 avril : 20 minutes de présentation
+et 10 minutes de questions.
+Votre présentation devra comporter les parties suivantes :
+
+- Présentation du contexte et de la question que vous souhaitez poser et répondre
+- Présentation de vos données
+- Présentation de la méthode choisie (pourquoi cette méthode, expliquez succinctement
+son fonctionnement)
+- Présentation des résultats
+- Conclusion
+
+
+# Référence
+
+Turan et al. "Relationship between Chronic Intermittent Hypoxia and Intraoperative Mean Arterial Pressure in Obstructive Sleep Apnea Patients Having Laparoscopic Bariatric Surgery". Anesthesiology 2015; 122 : 64-71.

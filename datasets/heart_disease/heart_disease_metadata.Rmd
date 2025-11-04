@@ -1,0 +1,68 @@
+---
+title: "Maladies coronaires"
+output:
+  pdf_document:
+    latex_engine: xelatex
+---
+
+# Contexte des données
+
+Les facteurs de risque cardiaque sont multiples et les maladies cardio-vasculaires représentent la première cause de mortalité évitable dans le monde. La coronopathie ou maladie coronaire est une maladie des artères coronaires qui alimentent le cœur en sang. Cela entraîne un apport insuffisant de sang au cœur, du fait de la réduction du diamètre de ces artrès, ce qui peut entraîner soit de la "souffrance" cardiaque, soit une nécrose des tissus cardiaques. Pour comprendre l'importance des différents facteurs en rapport avec les maladies coronaires, ces données représentent une compilation issue du suivi de patients dans un hôpital de Cleveland aux États-Unis.
+
+
+# Descriptif des données
+
+
+Nom de la colonne | Type de variable | Description
+------            | ----------       | --------------------------------------
+`age`             | Nombre entier    | Âge en années  
+`sex`             | Nombre entier    | Sexe (`1` : homme ; `0` : femme)
+`cp`              | Nombre entier    | Type de douleur thoracique (`1` : angine typique, `2` : angine atypique, `3` : douleur non anginal, `4` : douleur asymptomatique)        
+`trestbps`        | Nombre entier    | Pression sanguine au repos (mmHg après admission à l'hôpital)  
+`chol`            | Nombre entier    | Taux de cholestérol (en mg par dL)      
+`fbs`             | Nombre entier    | Glycémie à jeun > 120 mg par dL (`0` : non ; `1` : oui)      
+`restecg`         | Nombre entier    | Résultat d'électrocardiogramme au repose (`0` : normal ; `1` : anomalie de l'onde ST-T ; `2` : hypertrophie probable du ventricule gauche d'après le critère d'Estes)   
+`thalach`         | Nombre entier    | Fréquence cardiaque maximum observée  
+`exang`           | Nombre entier    | Angine de poitrine liée à de l'exercice (`0` : non ; `1` : oui)    
+`oldpeak`         | Nombre réel      | Intensité de la dépression de l'onde ST induite par l'exercice   
+`slope`           | Nombre entier    | Pente du segment ST au pic de l'exercice (`1` : pente positive ; `2` : pente plate ; `3` : pente négative)    
+`ca`              | Nombre entier    | Nombre de vaisseaux majeurs colorés par fluoroscopie (0 à 3)        
+`thal`            | Nombre entier    | Type d'anomalie observée (`3` : pas d'anomalie ; `6` : anomalie permanente ; `7` : anomalie réversible)
+`num`             | Nombre entier    | Diagnostic de maladie coronaire (`0` : réduction du diamètre inférieure à 50%, `1` : ; réduction du diamètre supérieure à 50% mais inférieure à 60% ; `2` : réduction du diamètre inférieure à 70% ; `4` ; réduction du diamètre inférieure à 80%)      
+
+Pour la variable `num`, on peut considérer les patients `0` comme n'étant pas malade, tandis que les patients de niveau `1`, `2`, et `3` le sont.
+
+
+# Travail demandé
+
+## Objectifs
+
+Plusieurs études peuvent être envisagées :
+
+- On pourra chercher à identifier des différences de biomarqueurs en fonction du genre
+- On pourra chercher à identifier l'effet de l'âge dans l'évolution de certains marqueurs
+- On pourra prédire le fait qu'un patient soit sain ou malade à partir des biomarqueurs, en prédisant la gravité de sa maladie
+
+
+## Exercice à rendre
+
+Vous présenterez vos résultats lors de la dernière séance le 4 avril : 20 minutes de présentation
+et 10 minutes de questions.
+Votre présentation devra comporter les parties suivantes :
+
+- Présentation du contexte et de la question que vous souhaitez poser et répondre
+- Présentation de vos données
+- Présentation de la méthode choisie (pourquoi cette méthode, expliquez succinctement
+son fonctionnement)
+- Présentation des résultats
+- Conclusion
+
+
+
+# Référence
+
+International application of a new probability algorithm for the diagnosis of coronary artery disease. By R. Detrano, A. Jánosi, W. Steinbrunn, M. Pfisterer, J. Schmid, S. Sandhu, K. Guppy, S. Lee, V. Froelicher. 1989. Published in American Journal of Cardiology
+
+Une page de résumé sur l'insuffisance cardiaque par Santé Publique France : https://www.santepubliquefrance.fr/maladies-et-traumatismes/maladies-cardiovasculaires-et-accident-vasculaire-cerebral/insuffisance-cardiaque
+
+Page de l'OMS sur les maladies cardiovasculaires : https://www.who.int/fr/health-topics/cardiovascular-diseases#tab=tab_1

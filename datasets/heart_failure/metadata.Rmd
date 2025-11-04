@@ -1,0 +1,44 @@
+---
+title: "Survie après un arrêt cardiaque"
+output:
+  pdf_document:
+    latex_engine: xelatex
+---
+
+
+# Contexte des données
+
+Ce jeu de données contient les données médicales de 299 patients avec une insuffisance cardiaque et ayant  déjà fait au moins un arrêt cardiaque. Ces données comprennent 13 mesures cliniques collectées pendant leur période de récupération. Ces données proviennent de l'insitut de Cardiologie Faisalabad à l'hôpital "Allied Hospoital" de Faisalabad dans le Punkab au Pakistan. Les données ont été collectées entre avril et décembre 2015.
+
+
+# Descriptif des données
+
+
+Nom de la colonne          | Type de variable     | Description
+------------------         | ----------           | --------------------------------------
+`age`                      | Nombre entier        | Âge du patient en années
+`anaemia`                  | Nombre binaire       | Le patient souffre-t-il d'anémie (`1` : oui ; `0`: non)
+`creatinine_phosphokinase` | Nombre entier        | Taux de créatinine phosphokinase dans le sang en microgrammes par litre
+`diabetes`                 | Nombre binaire       | La patient est-il diabétique (`1` : oui ; `0` : non)
+`ejection_fraction`        | Nombre entier        | Proportion de sang quittant le cœur à chaque battement
+`high_blood_pressure `     | Nombre binaire       | La patient souffre-t-il d'hypertension (`1` : oui ; `0` : non)
+`platelets`                | Nombre entier        | Taux de plaquettes sanguines (en milliers de plaquettes par mL de sang)
+`serum_creatinine`         | Nombre réel          | Taux de créatinine dans le sang (en milligrammes par décilitre de sang)
+`serum_sodium`             | Nombre entier        | Taux de sodium dans le sang (en milliéquivalent par litre de sang)
+`sex`                      | Nombre binaire       | Sexe du patient (`0` : femme, `1` : homme)
+`smoking`                  | Nombre binaire       | Le patient fume-t-il ? (`1` : oui, `0` : non)
+`time`                     | Nombre entier        | Temps de suivi du patient
+`DEATH_EVENT`              | Nombre binaire       | Le patient est-il décédé pendant la période de suivi (`1` : oui, `0` : non)
+
+Détail de certaines variables :  
+Le taux de créatinine phosphokinase sanguine indique si un tissu musculaire a été endommagé. Si c'est le cas, alors ce taux augmente.  
+La fraction d'éjection donne la proportion de sang qui est pompée par le ventricule gauche à chaque contraction.
+Le taux de créatinine est un déchet cellulaire généré par la créatine quand un muscle est endommagé, un fort taux est indicateur d'une dysfonction rénale.  
+Le taux de sodium sanguin permet d'avoir une indication sur le fonctionnement normal des nerfs et des muscles, un taux bas peut être indicateur d'un soucis nerveux ou musculaire.
+
+
+# Référence
+
+Davide Chicco, Giuseppe Jurman: "Machine learning can predict survival of patients with heart failure from serum creatinine and ejection fraction alone". BMC Medical Informatics and Decision Making 20, 16 (2020). https://doi.org/10.1186/s12911-020-1023-5 
+
+Page de l'OMS sur les maladies cardiovasculaires : https://www.who.int/fr/health-topics/cardiovascular-diseases#tab=tab_1

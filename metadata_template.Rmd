@@ -1,0 +1,49 @@
+---
+title: "TITLE"
+output:
+  pdf_document:
+    latex_engine: xelatex
+linkcolor: blue
+params:
+  questions: true
+  instructions: false
+---
+
+
+# Contexte des données
+
+XX YY
+
+# Descriptif des données
+
+XX colonnes et XX lignes:
+
+Nom de la colonne      | Type de variable     | Description
+--------               | ----------           | --------------------------------------
+`Company`              | Chaîne de caractères | 
+`Item`                 | Chaîne de caractères | 
+`Calories`             | Nombre réel          | 
+`Calories from Fat`    | Nombre réel          | 
+`Total Fat (g)`        | Nombre réel          | 
+`Saturated Fat (g)`    | Nombre réel          | 
+`Trans Fat (g)`        | Nombre réel          | 
+`Cholesterol (mg)`     | Nombre réel          | 
+`Sodium (mg)`          | Nombre réel          | 
+`Carbs (g)`            | Nombre réel          | 
+`Fiber (g)`            | Nombre réel          |
+`Sugars (g)`           | Nombre réel          |
+`Protein (g)`          | Nombre réel          |
+`Weight Watchers Pnts` | Nombre réel          |
+
+
+```{asis, include = params$questions}
+# Exemple de questions
+
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
+```
+
+<!-- Chunk qui définit s'il faut ajouter des consignes ou pas -->
+```{r, child=if (!params$instructions) params$instructions_file}
+```
+
+# Référence

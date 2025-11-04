@@ -1,0 +1,6 @@
+# Travail demandé
+
+## Exercice à rendre
+
+Vous réaliserez un court document (4 à 6 pages), introduisant le jeu de données
+et les problématiques que vous vous êtes posées.

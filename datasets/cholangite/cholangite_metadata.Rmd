@@ -1,0 +1,84 @@
+---
+title: "Essai clinique de médicament sur la cholangite biliaire primitive"
+output:
+  word_document: default
+  pdf_document:
+    latex_engine: xelatex
+linkcolor: blue
+---
+
+
+# Contexte des données
+
+La cholangite biliaire primitive (CBP), nouvelle dénomination de la cirrhose biliaire primitive, est une maladie cholestatique auto-immune et représente la première cause de cholestase (ralentissement de la circulation biliaire) intra-hépatique. Elle se caractérise par une destruction des canaux biliaires de petite taille liée à une infiltration lymphocytaire. La prévalence de la CBP est de 10 à 40 pour 100 000 habitants. La CBP affecte préférentiellement la femme (dans 90 % des cas) d’un âge médian de 55 ans au diagnostic. Ainsi, chez la femme de plus de 40 ans, la prévalence de la CBP est de 1 pour 1 000.  Les signes biologiques de la maladie sont les suivants : il existe une anomalie portant sur les phosphatases alcalines, les gamma-GT, ou les transaminases. Ces enzymes sont des protéines présentes dans le foie. Lorsque la sécrétion biliaire est anormale du fait de l’inflammation des voies biliaires, ces enzymes sont fabriquées en excès par le foie et déversées dans le sang, si bien que leur concentration sanguine augmente au-dessus des valeurs normales.
+
+Le jeu de données fourni ici suit un essai clinique randomisé ayant eu lieu entre 1974 et 1986 pour tester l'effet de l'utilisation d'un médicament (la D-penicillamine) sur la CBP. Il porte sur 312 patients pour lesquels la majorité de biomarqueurs potentiels est connue. Des données indépendantes de 106 patients supplémentaires ont été ajoutées afin de valider le modèle.
+
+# Descriptif des données
+
+20 colonnes et 418 lignes :
+
+Nom de la colonne      | Type de variable     | Description
+--------               | ----------           | --------------------------------------
+`ID`                   | Nombre entier        | Numéro d'identification du patient
+`N_Days`               | Nombre entier        | Nombre de jours entre l'entrée dans l'étude et soit le décés, la greffe de foie ou la fin de l'étude en juillet 1986
+`Status`               | Chaîne de caractères | Statut du patient : `C` = sortie de l'étude (= survie), `CL` = sortie de l'étude du fait d'une greffe de foie, `D` = décès
+`Drug`                 | Chaîne de caractères | Traitement administré durant l'essai clinique : `D-penicillamine` = D-penicillamine, `Placebo` = placebo
+`Age`                  | Nombre entier        | Âge en jours
+`Sex`                  | Chaîne de caractères | Sexe biologique : `F` = femme, `M` = homme
+`Ascites`              | Chaîne de caractères | Présence d'ascites, épanchement de liquide dans l'abdomen : `N` = non, `Y` = oui
+`Hepatomegaly`         | Chaîne de caractères | Présence d'hépatomégalie, c'est-à-dire d'hypertrophie du foie : `N` = non, `Y` = oui
+`Spiders`              | Chaîne de caractères | Présence d'angiome stellaire (*spiders* en anglais) : `N` = non, `Y` = oui
+`Edema`                | Chaîne de caractères | Présence d'œdème : `N` = non, `Y` = oui
+`Bilirubin`            | Nombre réel          | Bilirubine sérique en mg·dL⁻¹
+`Cholesterol`          | Nombre entier        | Cholestérol sérique en mg·dL⁻¹
+`Albumin`              | Nombre réel          | Albumine en mg·dL⁻¹
+`Copper`               | Nombre entier        | Cuivre dans l'urine en mg·dL⁻¹
+`Alk_Phos`             | Nombre réel          | Phosphatase alcaline en unité arbitraire·L⁻¹
+`SGOT`                 | Nombre réel          | Aspartate aminotransférase sérique en unité arbitraire·mL⁻¹(en anglais, ***s**erum *g*lutamic *o*xaloacetic *t*ransaminase*)
+`Triglycerides`        | Nombre entier        | Triglycérides en mg·dL⁻¹
+`Platelets`            | Nombre entier        | Nombre de plaquettes sanguine en milliers·ml⁻³
+`Prothrombin`          | Nombre réel          | Taux de prothrombine (= indicateur de la coagulation sanguine) exprimé en pourcentage du temps de Quick
+`Stage`                | Nombre entier        | Stade histologique de la maladie : `1` = stade I, `2` = stade II, `3` = stade III, `4` = stade IV (voir explications ci-dessous)
+
+
+## Explications de la variable `Stage`
+
+Les stades I, II, III et IV correspondent respectivement aux stade portal, périportal, septal (ou lobulaire), et à la cirrhose. Les stades III et IV correspondent aux stades avancés de la maladie.
+
+
+# Travail demandé
+
+## Objectifs
+
+— On pourra chercher à identifier l'efficacité du médicament administré sur la survie des patients
+— On pourra s'intéresser aux relations entre biomarqueurs et stades histologiques
+— On pourra s'intéresser aux associations entre biomarqueurs et signes cliniques catégoriels d'une maladie, en association avec les stades histologiques
+
+## Exercice à rendre
+
+Vous présenterez vos résultats lors de la dernière séance le 4 avril : 20 minutes de présentation
+et 10 minutes de questions.
+Votre présentation devra comporter les parties suivantes :
+
+- Présentation du contexte et de la question que vous souhaitez poser et répondre
+- Présentation de vos données
+- Présentation de la méthode choisie (pourquoi cette méthode, expliquez succinctement
+son fonctionnement)
+- Présentation des résultats
+- Conclusion
+
+
+# Référence
+
+Article original :
+> Dickson, Rolland E. M.D.; Grambsch, Patricia M; Fleming, Thomas R; Fisher, Lloyd D.; Langworthy, Alice1. Prognosis in primary biliary cirrhosis: Model for decision making. Hepatology 10(1):p 1-7, July 1989. | DOI: https://doi.org/10.1002/hep.1840100102
+
+Jeu de données :
+> Dickson, E., Grambsch, P., Fleming, T., Fisher, L., & Langworthy, A. (1989). Cirrhosis Patient Survival Prediction [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5R02G.
+
+Information générale sur la CBP : https://www.filfoie.com/glossary/cholangite-biliaire-primitive-cirrhose-biliaire-primitive/
+
+Fiche synthétique de la Haute Autorité de Santé sur la CBP : https://www.has-sante.fr/upload/docs/application/pdf/2021-11/synthese_mg_cholangite_biliaire_primitive.pdf
+
+Site d'information sur la CBP : https://www.fmcgastro.org/texte-postu/postu-2018-paris/cholangite-biliaire-primitive/

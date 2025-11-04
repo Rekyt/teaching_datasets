@@ -1,0 +1,14 @@
+# Travail demandé
+
+## Exercice à rendre
+
+Vous présenterez vos résultats lors de la dernière séance le 4 avril : 20 minutes de présentation
+et 10 minutes de questions.
+Votre présentation devra comporter les parties suivantes :
+
+- Présentation du contexte et de la question que vous souhaitez poser et répondre
+- Présentation de vos données
+- Présentation de la méthode choisie (pourquoi cette méthode, expliquez succinctement
+son fonctionnement)
+- Présentation des résultats
+- Conclusion

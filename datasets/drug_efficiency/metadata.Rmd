@@ -1,0 +1,39 @@
+---
+title: "Perception des médicaments d'après les retours patient⋅es"
+output:
+  pdf_document:
+    latex_engine: xelatex
+linkcolor: blue
+---
+
+
+# Contexte des données
+
+Ces données ont été obtenues en les extrayant du site https://www.webmd.com
+Il s'agit de données décrivant le traitement de 37 maladie communes et de leurs médicaments associés.
+Le site web permet aux patient⋅es de noter la facilité d'utilisation, l'efficacité perçue, en plus de leur satisfaction générale des différents médicaments. Il ne s'agit en aucun cas de données issues de la littérature scientifique, ni objective. Mais il peut être intéressant de travailler sur la **perception** d'efficacité des médicament en fonction de leurs formes de consommation ou bien de leur prix.
+
+# Descriptif des données
+
+Ce jeu de données décrit, par maladie, différentes caractéristiques associées aux médicaments utilisés pour les traiter.
+Il contient **685 lignes** et **10 colonnes** dont voilà le détail :
+
+Nom de la colonne | Type de variable     | Description
+--------          | ----------           | --------------------------------------
+`Condition`       | Chaîne de caractères | La maladie associée à ce médicament
+`Drug`            | Chaîne de caractères | Le nom du médicatement
+`EaseOfUse`       | Nombre réel          | Note moyenne sur 5 de la facilité d'utilisation du médicament d'après les retours patient⋅es
+`Effective`       | Chaîne de caractères | Note moyenne sur 5 de l'efficacité du médicament d'après les retours patient⋅es
+`Indication`      | Chaîne de caractères | Indication thérapeutique du médicament : `"On Label"` = indication officielle, `"Off Label"` = hors indication officielle, `NA` = non disponible
+`Reviews`         | Nombre réel          | Nombre de retours sur le médicament (utilisée pour calculer les notes moyennes)
+`Satisfaction`    | Nombre réel          | Note moyenne sur 5 de la satisfaction des patient⋅es pour l'utilisation du médicament
+`Type`            | Chaîne de caractères | Disponibilité du médicament : `"OTC"` = pour *Over-the-counter*, c'est-à-dire, en vente libre ; `"RX"` = sur ordonnance uniquement ; `"RX/OTC"` = parfois en vente libre, parfois sur orodnnance ; `NA` = non disponible)
+`Form`            | Chaîne de caractères | Forme d'utilisation du médicament : `"Capsule"` = gélule ; `"Cream"` = crème ; `"Liquid (Drink)"` = solution buvable ; `"Liquid (Inject)"` = solution injectable ; `"Other"` = autre ; `"Tablet"` = pilule
+`Price`           | Nombre réel          | Prix moyen du médicament en dollars américains (USD)
+
+
+# Références
+
+Source des données (en anglais) : https://www.kaggle.com/datasets/thedevastator/drug-performance-evaluation/data?select=Drug_clean.csv
+
+Description de la méthodologie de collecte (en anglais) : https://zenodo.org/record/3571494#.Y9Y5jNJBwUE

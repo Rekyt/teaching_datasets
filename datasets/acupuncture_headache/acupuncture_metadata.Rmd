@@ -1,0 +1,74 @@
+---
+title: "Acupuncture et Maux de têtes"
+output:
+  pdf_document:
+    latex_engine: xelatex
+linkcolor: blue
+---
+
+
+# Contexte des données
+
+Les maux de têtes chroniques sont un véritable problème de santé publique étant donné toutes conséquences sociales, sanitaires, et économiques qu'ils engendrent. Certains médicaments existent contre les maux de têtes et les migraines régulières mais ne sont pas efficaces sur tou⋅te⋅s les patient⋅es.
+Si des alternatives non-médicamenteuses étaient identifiées, elles pourraient être très utiles pour l'ensemble des patient⋅es.
+
+Ici il s'agit d'un jeu de données issu d'un essai clinique randomisé qui teste l'effet de l'acupuncture sur le nombre et la persistence de migraine.
+
+Davantage de contexte est disponible dans le fichier de description qui accompagne le jeu de données `Acupuncture Dataset Introduction_2.pdf`.
+
+
+# Descriptif des données
+
+Ce jeu de données contient **401 lignes** et **14 colonnes**
+
+Nom de la colonne | Type de variable | Description
+--------          | ----------       | --------------------------------------
+`id`              | Nombre entier    | Identifiant du patient
+`age`             | Nombre entier    | Âge du patient en années
+`sex`             | Nombre binaire   | Sexe du patient (`1` : femme ; `0` : homme)
+`migraine`        | Nombre binaire   | Nature des maux de têtes : `1` = migraine ; `0` = maux de tête liés à la tension
+`chronicity`      | Nombre entier    | Nombre d'année depuis le début des maux de têtes
+`acupuncturist`   | Nombre entier    | Identifiant de l'acupuncteur
+`practice_id`     | Nombre entier    | Identifiant du médecin généraliste
+`group`           | Nombre binaire   | Affectation de groupe traitement (`1` : acupuncture ; `0` : groupe contrôle)
+`pk1`             | Nombre réel      | Score de sévérité des maux de têtes avant intervention sur une échelle de Likert (voir ci-dessous)
+`pk2`             | Nombre réel      | Score de sévérité des maux de têtes à 3 mois après intervention sur une échelle de Likert (voir ci-dessous)
+`pk5`             | Nombre réel      | Score de sévérité des maux de têtes à 1 ans après intervention sur une échelle de Likert (voir ci-dessous)
+`f1`              | Nombre réel      | Fréquence de maux de tête avant intervention (voir ci-dessous)
+`f2`              | Nombre réel      | Fréquence de maux de tête à 3 mois après intervention (voir ci-dessous)
+`f5`              | Nombre réel      | Fréquence de maux de tête à 1 ans après intervention (voir ci-dessous)
+
+
+\newpage
+## Informations supplémentaires sur les variables `pkX` et `fX`
+
+Les variables `pk1`, `pk2`, et `pk5` sont des scores de sévérité de maux de têtes estimée par les patients selon l'échelle de Likert suivante :
+
+* `0` : Pas de migraine
+* `1` : Quand j'y fais attention, je réalise que j'ai un mal de tête
+* `2` : Maux de tête moyen qui peut être ignoré la plupart du temps
+* `3` : Les maux de tête sont douloureux, mais je peux faire mon travail et la plupart des tâches quotidiennes
+* `4` : Maux de tête sévères, j'ai des difficultés à me concentrer et ne peux réaliser que les tâches les plus simples
+* `5` : Maux de tête intenses handicapants
+
+Pour obtenir les variables de sévérité `pk` on demande aux patients de noter quatre fois par jour la sévérité de leurs maux de têtes et cela pendant une semaine. On somme les scores obtenus sur toute la semaine et cela nous permet d'obtenir le score de sévérité avant intervention, 3 mois après, et un an après. Le score peut donc varier en 0 et $5~\text{(valeur maximum du score)}\times4~\text{(nombre de fois par jour)}\times 7 ~\text{(nombre de jours par semaine)} = 140$
+
+Pour obtenir les variables de fréquences de maux de tête `f`, on demande aux patients de compter le nombre de jours où ils ont eu la migraine pendant une période de 28 jours.
+
+
+# Exemple de questions
+
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
+
+- On pourra visualiser la fréquence et la sévérité des maux de tête au cours du temps entre les groupes
+- On pourra vérifier si les deux groupes (contrôle et traitement) sont homogènes au départ
+- On pourra chercher à vérifier si l'acupuncture est efficace pour diminuer la fréquence et la sévérité des maux de têtes
+- On pourra tester dans quelle mesure les identités des praticien·nes ont une influence dans les symptômes de la maladie
+
+
+```{r, child=if (!params$instructions) params$instructions_file}
+```
+
+# Référence
+
+"Acupuncture for chronic headache in primary care: large, pragmatic, randomized trial", Andrew J Vickers, Rebecca W Rees, Catherine E Zollman, Rob McCarney, Claire M Smith, Nadia Ellis, Peter Fisher and Robbert Van Haselen, 2004 Mar 27;328(7442):744. https://doi.org/10.1136/bmj.38029.421863.EB

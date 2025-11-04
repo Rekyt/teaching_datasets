@@ -1,0 +1,87 @@
+---
+title: "Contenu en nutriments de l'alimentation générale"
+output:
+  pdf_document:
+    latex_engine: xelatex
+linkcolor: blue
+---
+
+# Contexte des données
+
+Une alimentation saine tout au long de la vie est cruciale pour éviter la malnutrition et le développement de maladie comme le diabète, le cancer ou les cardiopathies. Le changement de mode de vie à l'échelle mondiale, ainsi que l'augmentation de la consommation d'aliments transformés provoquent un changement des habitudes alimentaires. On observe une modification du régime alimentaire moyen à l'échelle planétaire, avec davantage de consommation d'aliments très caloriques, riches en graisses et en sucres, avec une consommation insuffisante de fruits et légumes. Afin de mieux identifer les aliments qui peuvent permettre d'atteindre un régime plus sain, il peut être intéressant de comparer leur contenu nutritionnel.
+
+Ce jeu de données provient d'une extraction de la base de données du site [FoodStruct](https://foodstruct.com/) qui est une encyclopédie sur l'alimentation. Les données de l'encyclopédie sont essentiellement issues de la base de données [Food Central](https://fdc.nal.usda.gov/) de la *Food and Drug Administration* américaine (agence états-unienne sur l'alimentation and les médicaments) dépendants du ministère de l'agriculture états-unien. Il liste les contenus en nutriments **pour 100 grammes de nourriture** de nombreux aliments.
+
+# Descriptif des données
+
+59 colonnes et 1174 lignes :
+
+Pour toutes les colonnes, il s'agit de contenu en nutriment en grammes pour 100 grammes d'aliement.
+
+Nom de la colonne      | Type de variable     | Description
+------------           | ----------           | ----------
+`Food.Name`                            | Chaîne de caractères | Nom de l'aliment
+`Category.Name`                        | Chaîne de caractères | Catégorie de l"aliment : `"Baby Foods"` = nourriture pour bébé, `"Baked Products"` = boulangerie, `"Beverages"` = boisson, `"Dairy"` = produit laitier, `"Fast Foods"` = produit de fast food, `"Fruits"` = fruits, `"Grains"` = céréales, `"Greens"` = légumes verts, `"Meals, Entrees, and Side Dishes"` = Plat préparé, `"Meat"` = viande, `"Mushrooms"` = champignons, `"Nuts"` = noix et fruits secs, `"Oils and Sauces"` = huiles et sauces, `"Seafood"` = fruits de mer, `"Soups"` = soupes, `"Spices"` = épices, `"Sweets"` = sucreries, `"Vegetables"` = légumes
+`Calcium`                              | Nombre réel          |
+`Calories`                             | Nombre réel          | Kilocalories pour 100g d'aliment
+`Carbs`                                | Nombre réel          |
+`Cholesterol`                          | Nombre réel          |
+`Copper`                               | Nombre réel          |
+`Fats`                                 | Nombre réel          |
+`Fiber`                                | Nombre réel          |
+`Folate`                               | Nombre réel          |
+`Iron`                                 | Nombre réel          |
+`Magnesium`                            | Nombre réel          |
+`Monounsaturated.Fat`                  | Nombre réel          |
+`Net.carbs`                            | Nombre réel          |
+`Omega.3...DHA`                        | Nombre réel          |
+`Omega.3...DPA`                        | Nombre réel          |
+`Omega.3...EPA`                        | Nombre réel          |
+`Phosphorus`                           | Nombre réel          |
+`Polyunsaturated.fat`                  | Nombre réel          |
+`Potassium`                            | Nombre réel          |
+`Protein`                              | Nombre réel          |
+`Saturated.Fat`                        | Nombre réel          |
+`Selenium`                             | Nombre réel          |
+`Sodium`                               | Nombre réel          |
+`Trans.Fat`                            | Nombre réel          |
+`Vitamin.A..IU.`                       | Nombre réel          | Valeurs en unités internationales
+`Vitamin.A.RAE`                        | Nombre réel          |
+`Vitamin.B1`                           | Nombre réel          |
+`Vitamin.B12`                          | Nombre réel          |
+`Vitamin.B2`                           | Nombre réel          |
+`Vitamin.B3`                           | Nombre réel          |
+`Vitamin.B5`                           | Nombre réel          |
+`Vitamin.B6`                           | Nombre réel          |
+`Vitamin.C`                            | Nombre réel          |
+`Zinc`                                 | Nombre réel          |
+`Choline`                              | Nombre réel          |
+`Fructose`                             | Nombre réel          |
+`Histidine`                            | Nombre réel          |
+`Isoleucine`                           | Nombre réel          |
+`Leucine`                              | Nombre réel          |
+`Lysine`                               | Nombre réel          |
+`Manganese`                            | Nombre réel          |
+`Methionine`                           | Nombre réel          |
+`Phenylalanine`                        | Nombre réel          |
+`Starch`                               | Nombre réel          |
+`Sugar`                                | Nombre réel          |
+`Threonine`                            | Nombre réel          |
+`Tryptophan`                           | Nombre réel          |
+`Valine`                               | Nombre réel          |
+`Vitamin.D`                            | Nombre réel          |
+`Vitamin.E`                            | Nombre réel          |
+`Vitamin.K`                            | Nombre réel          |
+`Omega.3...ALA`                        | Nombre réel          |
+`Omega.6...Eicosadienoic.acid`         | Nombre réel          |
+`Omega.6...Gamma.linoleic.acid`        | Nombre réel          |
+`Omega.3...Eicosatrienoic.acid`        | Nombre réel          |
+`Omega.6...Dihomo.gamma.linoleic.acid` | Nombre réel          |
+`Omega.6...Linoleic.acid`              | Nombre réel          |
+`Omega.6...Arachidonic.acid`           | Nombre réel          |
+
+# Références
+
+Jeu de données original : https://www.kaggle.com/datasets/beridzeg45/food-nutritional-facts
+
+Site web FoodStruct : https://foodstruct.com/

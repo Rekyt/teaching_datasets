@@ -1,0 +1,75 @@
+---
+title: "Relations allométriques et taux de graisse"
+output:
+  word_document: default
+  pdf_document:
+    latex_engine: xelatex
+linkcolor: blue
+---
+
+
+# Contexte des données
+
+L'allométrie, branche de la biologie qui étudie les relations de taille et de croissance entre différentes parties d'un organisme, offre des perspectives fascinantes dans la compréhension de la composition corporelle humaine. Dans le domaine de l'anthropométrie, branche de l'allométrie qui s'intéresse aux mesures sur les humains, les chercheurs utilisent des modèles allométriques pour prédire avec précision le pourcentage de graisse corporelle, en explorant les relations non linéaires entre diverses mesures physiques telles que la masse, la taille, les plis cutanés et le tour de taille. Ces modèles permettent de développer des équations prédictives qui transcendent les approches traditionnelles, en intégrant la complexité des variations individuelles et en fournissant des estimations plus robustes de la composition corporelle. Les techniques allométriques s'avèrent particulièrement importantes dans des domaines aussi variés que la médecine sportive, la nutrition clinique et la recherche en physiologie humaine, où la compréhension précise de la répartition de la masse grasse peut avoir des implications significatives pour la santé et la performance.
+
+Ce jeu de données comprend les mesures de 252 hommes de beaucoup d'organes ainsi que la densité mesurée par pesée sous l'eau, qui est compliquée, lourde, et difficile. À partir de cette mesure, on peut en déduire le taux de masse graisseuse. Cependant, plusieurs équations de calcul de ce taux existent et il peut être intéressant de les mettre en regard. En outre, les corrélations qui peuvent exister entre les différentes mesures anthropométriques pourraient permettre une meilleure compréhension des relations de taille entre membres.
+
+# Descriptif des données
+
+15 colonnes et 252 lignes :
+
+Nom de la colonne      | Type de variable     | Description
+--------               | ----------           | --------------------------------------
+`Density`              | Nombre réel          | Densité mesurée par pesée sous l'eau (g·cm⁻³)
+`BodyFat`              | Nombre réel          | Pourcentage de graisse à partir de l'équation de Siri (voir explication ci-dessous)
+`Age`                  | Nombre réel          | Âge (années)
+`Weight`               | Nombre réel          | Poids (en livres états-unienne)
+`Height`               | Nombre réel          | Taille (en pouces)
+`Neck`                 | Nombre réel          | Circonférence du cou (cm)
+`Chest`                | Nombre réel          | Tour de poitrine (cm)
+`Abdomen`              | Nombre réel          | Circonférence de l'abdomen (cm)
+`Hip`                  | Nombre réel          | Tour de taille (cm)
+`Thigh`                | Nombre réel          | Circonférence de la cuisse (cm)
+`Knee`                 | Nombre réel          | Circonférence du genou (cm)
+`Ankle`                | Nombre réel          | Circonférence de la chevielle (cm)
+`Biceps`               | Nombre réel          | Circonférence du biceps (en extension) (cm)
+`Forearm`              | Nombre réel          | Circonférence de l'avant-bras (cm)
+`Wrist`                | Nombre réel          | Circonférence du poignet (cm)
+
+
+# Équation de Siri
+
+L'équation de Siri permet d'obtenir la proportion de masse graisseuse à partir de la densité selon l'équation suivante :
+
+$$
+\text{Proportion de masse graisseuse} = \frac{495}{\text{Densité}} - 450
+$$
+# Travail demandé
+
+## Objectifs
+
+- On pourra chercher à identifier les relations entre toutes les mesures du corps, on pourra regarder si les parties du corps sont davantage corrélées entre elles ou non
+- On pourra regarder la distribution générale des marqueurs allométriques et tenter d'identifier des groupes d'individus particuliers 
+- On pourra chercher à prédire la densité des individus et identifier les variables les plus importantes pour ceux-ci
+- On pourra calculer l'indice de masse corporelle (= Poids / Taille²) ̂pour le comparer aux autres indicateurs présents ici
+- On pourra enfin voir les structurations des variables du corps en fonction de l'âge
+
+## Exercice à rendre
+
+Vous présenterez vos résultats lors de la dernière séance le 4 avril : 20 minutes de présentation
+et 10 minutes de questions.
+Votre présentation devra comporter les parties suivantes :
+
+- Présentation du contexte et de la question que vous souhaitez poser et répondre
+- Présentation de vos données
+- Présentation de la méthode choisie (pourquoi cette méthode, expliquez succinctement
+son fonctionnement)
+- Présentation des résultats
+- Conclsion
+
+
+# Référence
+
+Jeu de données original : https://www.kaggle.com/datasets/fedesoriano/body-fat-prediction-dataset/data
+
+Équation de Siri : Siri, W.E. (1956), "Gross composition of the body", in Advances in Biological and Medical Physics, vol. IV, edited by J.H. Lawrence and C.A. Tobias, Academic Press, Inc., New York.

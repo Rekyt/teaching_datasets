@@ -1,0 +1,56 @@
+---
+title: "Empathie et santé mentale étudiante"
+output:
+  pdf_document:
+    latex_engine: xelatex
+linkcolor: blue
+---
+
+
+# Contexte des données
+
+Les étudiant·es, et en particulier celles et ceux en science biomédicales, sont en moyenne en plus mauvaise santé mentale que le reste de la population, même en comparant à des personnes des mêmes classes d'âge. En particulier, ils montrent un taux de *burnout* et de dépression plus élevés que la moyenne. Ces maladies sont caractérisées par un désengagement et une attitude cynique qui peuvent nuire aux savoirs-faires et savoirs-êtres nécessaire pour une carrière médicale. Le manque d'empathie dont peuvent faire part ces étudiant·es peut en effet interférer avec la nécessaire écoute dont elles et ils doivent faire preuve face aux patient·es.
+
+L'objectif de l'étude présente est de mesurer dans quelle mesure les étudiant·es affectées par les maladies mentales peuvent faire preuve d'un manque d'empathie, en le mesurant à la fois à partir de tests standardisés mais aussi en l'évaluant *via* des mesures déclaratives. Il s'agit d'une étude menée sur des étudiant·es de la faculté de Médicine de l'Université de Lausanne, en Suisse.
+
+
+# Descriptif des données
+
+20 colonnes et 886 lignes:
+
+Nom de la colonne      | Type de variable     | Description
+--------               | ----------           | --------------------------------------
+`id`                   | Nombre entier        | Numéro d'identification de l'étudiant·e
+`age`                  | Nombre entier        | Âge de l'étudiant·e en années au moment de l'enquête (en 2020-2021)
+`year`                 | Nombre entier        | Année du cursus des étudiant·es : `1` = 1ère année de Licence ; `2` = 2ème année de Licence ; `3` = 3ème année de Licence ; `4` = 1ère année de Master ; `5` = 2ème année de Master ; `6` = 3ème année de Master
+`sex`                  | Nombre entier        | Genre de l'étudiant·e autodéclaré : `1` = homme ; `2` = femme ; `3` = non-binaire
+`glang`                | Nombre entier        | Langue maternelle (voir fichier d'explication pour la liste complète)
+`part`                 | Nombre entier        | Avez-vous un·e parteneraire ? : `0` = non ; `1` = oui
+`job`                  | Nombre entier        | Avez-vous un travail salarié ? : `0` = non ; `1` = oui
+`stud_h`               | Nombre entier        | En plus des cours, combien d'heures étudiez-vous par semaines ?
+`health`               | Nombre entier        | À quel point êtes vous satisfait·e de votre état de santé : de `1` = très insatisfait·e à `5` = très satisfait
+`psyt`                 | Nombre entier        | Avez-vous consulté un·e psychologue ou un·e psychiatre dans les 12 derniers mois ? : `0` = non ; `1` = oui
+`jspe`                 | Nombre entier        | Score d'empathie totale donné par l'échelle *Jefferson Scale of Physician Empathy Medical Student* qui mesure l'empathie cognitive (voir explications ci-dessous)
+`qcae_cog`             | Nombre entier        | Score d'empathie cognitive du *Questionnaire of Cognitive and Affective Empathy* (voir explications ci-dessous)
+`qcae_aff`             | Nombre entier        | Score d'empathie affective du *Questionnaire of Cognitive and Affective Empathy* (voir explications ci-dessous)
+`amsp`                 | Nombre entier        | Score d'empathie comportementale évaluée par l'échelle *Ability to Modify Self-Presentation* (voir explications ci-dessous)
+`erec_mean`            | Nombre réel          | Moyenne des scores d'identification des émotions d'après le test  *Geneva **E**motion **Rec**ognition Test short form* (GERT)
+`cesd`                 | Nombre entier        | Score de symptôme dépressif sur l'échelle du *Center for Epidemiological Studies-Depression*
+`stai_t`               | Nombre entier        | Score d'anxiété sur l'échelle *State-Trait Anxiety Inventory*
+`mbi_ex`               | Nombre entier        | Score d'épuisement émotionnel sur l'échelle du *burnout* *Maslach Burnout Inventory Student*
+`mbi_cy`               | Nombre entier        | Score de cynisme sur l'échelle du *burnout* *Maslach Burnout Inventory Student*
+`mbi_ea`               | Nombre entier        | Score d'efficacité académique sur l'échelle du *burnout* *Maslach Burnout Inventory Student*
+
+
+## Différentes empathies : cognitive, affective, et comportementale
+
+L'empathie est un concept complexe qui se déploie selon trois dimensions complémentaires : cognitive, affective et comportementale. L'empathie cognitive correspond à la capacité intellectuelle de comprendre les pensées, perspectives et états mentaux d'autrui, comme si l'on se mettait mentalement à sa place. L'empathie affective, quant à elle, implique la capacité de ressentir émotionnellement ce que l'autre ressent, de partager ses émotions de manière quasi-intuitive et viscérale. Enfin, l'empathie comportementale se traduit par des actions concrètes qui manifestent notre compréhension et notre connexion émotionnelle : il s'agit de la capacité à réagir de manière adaptée et bienveillante face à la situation de l'autre, par des gestes, des attitudes ou des comportements qui démontrent notre souci et notre considération. Ces trois types d'empathie interagissent et se renforcent mutuellement, permettant des interactions sociales plus riches, plus profondes et plus authentiques.
+
+
+# Références
+
+Pour avoir le détail des scores et des échelles associées se référer à l'article de recherche source : Valerie Carrard, Céline Bourquin, Sylvie Berney, Katja Schlegel, Jacques Gaume, Pierre-Alexandre Bart, Martin Preisig, Marianne Schmid Mast & Alexandre Berney (2022): The relationship between medical students’ empathy, mental health, and burnout: A cross-sectional study, Medical Teacher, DOI: 10.1080/0142159X.2022.2098708
+
+Toutes les échelles des tests sont détaillées dans ce tableau : https://pmc.ncbi.nlm.nih.gov/articles/PMC8647527/#T1
+
+Source des données : Carrard, V., Bourquin, C., Berney, S., Schlegel, K., Gaume, J., Bart, P.-A., Preisig, M., Schmid Mast, M., & Berney, A. (2022). Dataset for the paper "The relationship between medical students' empathy, mental health, and burnout: A cross-sectional study" published in Medical Teacher (2022) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5702895
