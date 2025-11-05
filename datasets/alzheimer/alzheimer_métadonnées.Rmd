@@ -1,0 +1,38 @@
+---
+title: "OASIS – Cohorte de suivi d'Alzheimer"
+output:
+  pdf_document:
+    latex_engine: xelatex
+---
+
+
+# Contexte des données
+
+La maladie d'Alzheimer représente la forme la plus fréquente de démence, touchant plus de 50 millions de personnes dans le monde. Cette pathologie neurodégénérative se caractérise par une accumulation progressive de protéines bêta-amyloïdes et tau dans le cerveau, conduisant à la mort neuronale et à une atrophie cérébrale. Les manifestations cliniques incluent des troubles de la mémoire, des fonctions exécutives, du langage et du comportement, avec un impact majeur sur l'autonomie des patients. Malgré des décennies de recherche, les mécanismes exacts déclenchant la maladie restent incomplètement compris, d'où l'importance cruciale des études longitudinales à grande échelle.
+
+L'initiative *Open Access Series of Imaging Studies* (OASIS) représente l'une des plus importantes bases de données longitudinales en libre accès dédiée à l'étude de la maladie d'Alzheimer et du vieillissement cérébral. Lancée par l'Université de Washington à St. Louis, elle comprend des milliers d'images IRM et de données cliniques collectées sur plusieurs décennies. Cette ressource est particulièrement précieuse car elle inclut des participants à différents stades - des sujets cognitivement sains, des personnes présentant un déclin cognitif léger (MCI), jusqu'aux patients atteints de démence confirmée.
+
+Les données OASIS sont structurées de manière à permettre le suivi de multiples cofacteurs potentiellement impliqués dans la progression de la maladie d'Alzheimer. Parmi les variables suivies, on trouve des mesures neuropsychologiques standardisées (comme le Clinical Dementia Rating ou CDR), des données démographiques détaillées, des informations génétiques (notamment le statut APOE4), ainsi que des mesures volumétriques cérébrales issues des IRM. Cette richesse de données permet aux chercheurs d'étudier les interactions complexes entre ces différents facteurs et leur influence sur l'évolution de la maladie, contribuant ainsi à une meilleure compréhension des mécanismes sous-jacents de l'Alzheimer.
+
+# Descriptif des données
+
+10 colonnes et 373 lignes:
+
+
+Nom de la colonne | Type de variable     | Description
+--------          | ----------           | --------------------------------------
+`Group`           | Chaîne de caractères | Statut de démence de la personne (`"Demented"` : personne avec démence ; `"Nondemented"` : personne sans démence ; `"Converted"` : personne développant une démence)
+`M.F`             | Chaîne de caractères | Genre de la personne (`"M"` : homme, `"F"` : femme)
+`Age `            | Nombre réel          | Âge de la personne
+`EDUC `           | Nombre réel          | Nombre d'années d'éducation de la personne (tout compris)
+`SES `            | Nombre entier        | Statut socioéconomique (échelle de 1 = faible à 5 = élevé)
+`MMSE `           | Nombre réel          | Résultat au test "[**m**ini-**m**ental **s**tate **e**xamination](https://fr.wikipedia.org/wiki/Mini-mental_state)", score de 0 à 30 qui indique l'évaluation des fonctions cognitives : score ≥ 24 = cognition normale, 23 ≥ score ≥ 19 = légère altération, 18 ≥ score ≥ 10 = altération moyenne, score ≤ 9 = altération importante (signe de démence ?)
+`CDR `            | Nombre réel          | Score de démence clinique (***C**linical **D**ementia **R**ating*), échelle numérique qui permet de quantifier la sévérité des symptômes de démence (0 = pas de démence, 0.5 = démence très légère, 1 = démence légère, 2 = démence modérée, 3 = démence sévère)
+`eTIV `           | Nombre réel          | Volume total intracranial estimé en cm³ (***e**stimated total **i**ntracranial **v**olume*)
+`nWBV `           | Nombre réel          | Volume cérébral normalisé (***n**ormalized **W**hole **B**rain **V**olume*)
+`ASF`             | Nombre réel          | Facteur d'échelle pour comparer les volumes intracraniaux estimés  pour tenir compte des variations anatomiques (***A**tlas **S**caling **F**actor*)
+
+
+# Référence
+
+> Marcus DS, Fotenos AF, Csernansky JG, Morris JC, Buckner RL. Open access series of imaging studies: longitudinal MRI data in nondemented and demented older adults. J Cogn Neurosci. 2010 Dec;22(12):2677-84. doi: [10.1162/jocn.2009.21407](https://doi.org/10.1162/jocn.2009.21407). PMID: 19929323; PMCID: PMC2895005.
