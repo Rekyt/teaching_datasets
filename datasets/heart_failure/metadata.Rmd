@@ -3,6 +3,10 @@ title: "Survie après un arrêt cardiaque"
 output:
   pdf_document:
     latex_engine: xelatex
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 
@@ -36,6 +40,14 @@ La fraction d'éjection donne la proportion de sang qui est pompée par le ventr
 Le taux de créatinine est un déchet cellulaire généré par la créatine quand un muscle est endommagé, un fort taux est indicateur d'une dysfonction rénale.  
 Le taux de sodium sanguin permet d'avoir une indication sur le fonctionnement normal des nerfs et des muscles, un taux bas peut être indicateur d'un soucis nerveux ou musculaire.
 
+```{asis, include = params$questions}
+# Exemple de questions
+
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
+```
+
+```{r, child=if (!params$instructions) params$instructions_file}
+```
 
 # Référence
 

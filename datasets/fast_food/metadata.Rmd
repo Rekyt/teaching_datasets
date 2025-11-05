@@ -3,6 +3,11 @@ title: "Nutriments des menus de restauration rapide"
 output:
   pdf_document:
     latex_engine: xelatex
+linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 # Contexte des données
@@ -46,6 +51,19 @@ $$
 Outre le fait que ce calcul de points néglige le contenu en vitamines ou en autres nutriments des aliments, le programme Weight Watchers est aussi critiqué pour ses positionnements spécifiques : inclusion des menus de MacDonald's dans ses calculs, focalisation importante sur la quantification, focalisation sur les calories plutôt que sur le rééquilibrage alimentaire, etc.
 
 L'algorithme de calcul des points peut évoluer mais **n'est pas public** donc certaines personnes essaient d'en trouver les variations. Si la formule ci-dessus ne correspond au calcul, il est possible d'utiliser des [formules de calcul alternatives](https://www.reddit.com/r/weightwatchers/comments/r7f0o9/point_algorithm/).
+
+```{asis, include = params$questions}
+# Exemple de questions
+
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
+
+- On peut tenter de regarder le paysage nutrionnel de la nourriture compilée ici en fonction des marques de fast-food proposées
+- On peut tenter une classification grossière des items proposés pour identifier des groupes d'aliments
+- On peut quantifier les apports nutritionnels d'un menu "classique" chez une marque ou chez une autre
+```
+
+```{r, child=if (!params$instructions) params$instructions_file}
+```
 
 ## Référence
 

@@ -1,10 +1,13 @@
 ---
 title: "Relations allométriques et taux de graisse"
 output:
-  word_document: default
   pdf_document:
     latex_engine: xelatex
 linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 
@@ -44,29 +47,19 @@ L'équation de Siri permet d'obtenir la proportion de masse graisseuse à partir
 $$
 \text{Proportion de masse graisseuse} = \frac{495}{\text{Densité}} - 450
 $$
-# Travail demandé
 
-## Objectifs
+```{asis, include = params$questions}
+# Exemple de questions
 
 - On pourra chercher à identifier les relations entre toutes les mesures du corps, on pourra regarder si les parties du corps sont davantage corrélées entre elles ou non
 - On pourra regarder la distribution générale des marqueurs allométriques et tenter d'identifier des groupes d'individus particuliers 
 - On pourra chercher à prédire la densité des individus et identifier les variables les plus importantes pour ceux-ci
 - On pourra calculer l'indice de masse corporelle (= Poids / Taille²) ̂pour le comparer aux autres indicateurs présents ici
 - On pourra enfin voir les structurations des variables du corps en fonction de l'âge
+```
 
-## Exercice à rendre
-
-Vous présenterez vos résultats lors de la dernière séance le 4 avril : 20 minutes de présentation
-et 10 minutes de questions.
-Votre présentation devra comporter les parties suivantes :
-
-- Présentation du contexte et de la question que vous souhaitez poser et répondre
-- Présentation de vos données
-- Présentation de la méthode choisie (pourquoi cette méthode, expliquez succinctement
-son fonctionnement)
-- Présentation des résultats
-- Conclsion
-
+```{r, child=if (!params$instructions) params$instructions_file}
+```
 
 # Référence
 

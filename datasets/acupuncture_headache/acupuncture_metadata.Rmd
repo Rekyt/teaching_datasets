@@ -4,6 +4,10 @@ output:
   pdf_document:
     latex_engine: xelatex
 linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 
@@ -55,7 +59,7 @@ Pour obtenir les variables de sévérité `pk` on demande aux patients de noter 
 
 Pour obtenir les variables de fréquences de maux de tête `f`, on demande aux patients de compter le nombre de jours où ils ont eu la migraine pendant une période de 28 jours.
 
-
+```{asis, include = params$questions}
 # Exemple de questions
 
 Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
@@ -64,7 +68,7 @@ Ce jeu de données est divers, voici des exemples de questions que vous pouvez v
 - On pourra vérifier si les deux groupes (contrôle et traitement) sont homogènes au départ
 - On pourra chercher à vérifier si l'acupuncture est efficace pour diminuer la fréquence et la sévérité des maux de têtes
 - On pourra tester dans quelle mesure les identités des praticien·nes ont une influence dans les symptômes de la maladie
-
+```
 
 ```{r, child=if (!params$instructions) params$instructions_file}
 ```

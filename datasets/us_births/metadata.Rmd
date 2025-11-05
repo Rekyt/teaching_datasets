@@ -4,6 +4,10 @@ output:
   pdf_document:
     latex_engine: xelatex
 linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 # Contexte des données
@@ -44,6 +48,14 @@ Nom de la colonne       | Type de variable     | Description
 `birth_weight`          | Chaîne de caractères | Intervalle de poids à la naissance (en grammes) (`NA` = donnée manquante)
 `no_abnormalities`      | Chaîne de caractères | Pas d'anormalité congénitale du bébé : `"(0) False"` = certaines anormalités constatées, `"(1) True"` = aucune anormalité observée, `NA` = donnée manquante
 
+```{asis, include = params$questions}
+# Exemple de questions
+
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
+```
+
+```{r, child=if (!params$instructions) params$instructions_file}
+```
 
 # Référence
 

@@ -1,10 +1,13 @@
 ---
 title: "Essai clinique de médicament sur la cholangite biliaire primitive"
 output:
-  word_document: default
   pdf_document:
     latex_engine: xelatex
 linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 
@@ -47,27 +50,17 @@ Nom de la colonne      | Type de variable     | Description
 Les stades I, II, III et IV correspondent respectivement aux stade portal, périportal, septal (ou lobulaire), et à la cirrhose. Les stades III et IV correspondent aux stades avancés de la maladie.
 
 
-# Travail demandé
+```{asis, include = params$questions}
+# Exemple de questions
 
-## Objectifs
-
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
 — On pourra chercher à identifier l'efficacité du médicament administré sur la survie des patients
 — On pourra s'intéresser aux relations entre biomarqueurs et stades histologiques
 — On pourra s'intéresser aux associations entre biomarqueurs et signes cliniques catégoriels d'une maladie, en association avec les stades histologiques
+```
 
-## Exercice à rendre
-
-Vous présenterez vos résultats lors de la dernière séance le 4 avril : 20 minutes de présentation
-et 10 minutes de questions.
-Votre présentation devra comporter les parties suivantes :
-
-- Présentation du contexte et de la question que vous souhaitez poser et répondre
-- Présentation de vos données
-- Présentation de la méthode choisie (pourquoi cette méthode, expliquez succinctement
-son fonctionnement)
-- Présentation des résultats
-- Conclusion
-
+```{r, child=if (!params$instructions) params$instructions_file}
+```
 
 # Référence
 

@@ -4,6 +4,10 @@ output:
   pdf_document:
     latex_engine: xelatex
 linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 
@@ -27,10 +31,21 @@ Nom de la colonne | Type de variable     | Description
 `Indication`      | Chaîne de caractères | Indication thérapeutique du médicament : `"On Label"` = indication officielle, `"Off Label"` = hors indication officielle, `NA` = non disponible
 `Reviews`         | Nombre réel          | Nombre de retours sur le médicament (utilisée pour calculer les notes moyennes)
 `Satisfaction`    | Nombre réel          | Note moyenne sur 5 de la satisfaction des patient⋅es pour l'utilisation du médicament
-`Type`            | Chaîne de caractères | Disponibilité du médicament : `"OTC"` = pour *Over-the-counter*, c'est-à-dire, en vente libre ; `"RX"` = sur ordonnance uniquement ; `"RX/OTC"` = parfois en vente libre, parfois sur orodnnance ; `NA` = non disponible)
+`Type`            | Chaîne de caractères | Disponibilité du médicament : `"OTC"` = pour *Over-the-counter*, c'est-à-dire, en vente libre ; `"RX"` = sur ordonnance uniquement ; `"RX/OTC"` = parfois en vente libre, parfois sur ordonnance ; `NA` = non disponible)
 `Form`            | Chaîne de caractères | Forme d'utilisation du médicament : `"Capsule"` = gélule ; `"Cream"` = crème ; `"Liquid (Drink)"` = solution buvable ; `"Liquid (Inject)"` = solution injectable ; `"Other"` = autre ; `"Tablet"` = pilule
 `Price`           | Nombre réel          | Prix moyen du médicament en dollars américains (USD)
 
+```{asis, include = params$questions}
+# Exemple de questions
+
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
+
+- On peut tester si la nature du médicaments joue sur la satisfaction des patient·es à la es utiliser
+- On peut tester l'influence du prix sur la satisfaction et la facilité d'utilisation des médicaments
+```
+
+```{r, child=if (!params$instructions) params$instructions_file}
+```
 
 # Références
 

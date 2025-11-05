@@ -4,6 +4,10 @@ output:
   pdf_document:
     latex_engine: xelatex
 linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 # Contexte des données
@@ -79,6 +83,15 @@ Nom de la colonne      | Type de variable     | Description
 `Omega.6...Dihomo.gamma.linoleic.acid` | Nombre réel          |
 `Omega.6...Linoleic.acid`              | Nombre réel          |
 `Omega.6...Arachidonic.acid`           | Nombre réel          |
+
+```{asis, include = params$questions}
+# Exemple de questions
+
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
+```
+
+```{r, child=if (!params$instructions) params$instructions_file}
+```
 
 # Références
 

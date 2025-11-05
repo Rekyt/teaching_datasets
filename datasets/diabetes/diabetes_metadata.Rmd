@@ -4,6 +4,10 @@ output:
   pdf_document:
     latex_engine: xelatex
 linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 # Contexte des données
@@ -30,31 +34,19 @@ Nom de la colonne      | Type de variable     | Description
 `LBXGLT`               | Nombre entier        | Glycémie dans un test de tolérance au glucose pendant deux heures en mg·L⁻
 `LBXIN`                | Nombre réel          | Taux d'insuline sanguin en µunité·mL⁻¹
 
-# Travail demandé
 
-## Objectifs
+```{asis, include = params$questions}
+# Exemple de questions
 
-Plusieurs études peuvent être envisagées :
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
 
 - On pourra chercher à comprendre l’influence conjointes des paramètres biologiques et sociologiques sur le fait d'être porteur du diabètes
 - On pourra étudier les associations entre diagnostique de diabète et autres paramètres (en particulier pour les individus ayant "presque" un diagnostique)
 - On pourra contraster ces résultats par catégorie d'âge
+```
 
-
-## Exercice à rendre
-
-Vous présenterez vos résultats lors de la dernière séance le 4 avril : 20 minutes de présentation
-et 10 minutes de questions.
-Votre présentation devra comporter les parties suivantes :
-
-- Présentation du contexte et de la question que vous souhaitez poser et répondre
-- Présentation de vos données
-- Présentation de la méthode choisie (pourquoi cette méthode, expliquez succinctement
-son fonctionnement)
-- Présentation des résultats
-- Conclusion
-
-
+```{r, child=if (!params$instructions) params$instructions_file}
+```
 
 # Référence
 

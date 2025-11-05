@@ -4,6 +4,10 @@ output:
   pdf_document:
     latex_engine: xelatex
 linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 
@@ -78,34 +82,19 @@ Nom de la colonne      | Type de variable     | Description
 `TWA.HR`               | Nombre réel          | Fréquence cardiaque moyenne pendant l'opération
 
 
-# Travail demandé
+```{asis, include = params$questions}
+# Exemple de questions
 
-## Objectifs
-
-Plusieurs études peuvent être envisagées :
-
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
 - Etudier les liens entre les différentes variables, c’est à dire à identifier les variables pertinentes qui permettent de séparer des groupes.
 - On pourra chercher à prédire le minimum de Sao2 nocture en fonction des variables
 proposées.
 - On pourra chercher à prédire l’apnée sévère en fonction des variables proposées.
-
-Les techniques pouvant être utilisée dans le cadre de cette étude sont principalement les
-modèles linéaires généralisés et les approches par classification, mais les ACP, ACM et kmeans
-peuvent aussi être utilisés.
+```
 
 
-## Exercice à rendre
-
-Vous présenterez vos résultats lors de la dernière séance le 4 avril : 20 minutes de présentation
-et 10 minutes de questions.
-Votre présentation devra comporter les parties suivantes :
-
-- Présentation du contexte et de la question que vous souhaitez poser et répondre
-- Présentation de vos données
-- Présentation de la méthode choisie (pourquoi cette méthode, expliquez succinctement
-son fonctionnement)
-- Présentation des résultats
-- Conclusion
+```{r, child=if (!params$instructions) params$instructions_file}
+```
 
 
 # Référence

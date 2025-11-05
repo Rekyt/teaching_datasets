@@ -4,6 +4,10 @@ output:
   pdf_document:
     latex_engine: xelatex
 linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 # Contexte des données
@@ -34,28 +38,18 @@ Nom de la colonne | Type de variable     | Description
 `GGT`             | Nombre réel          | Taux de γ-glutamyl-transférase dans le sang
 `PROT`            | Nombre réel          | Taux de protéines totales dans le sang
 
+```{asis, include = params$questions}
+# Exemple de questions
 
-# Travail demandé
-
-## Objectifs
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
 
 - On pourra chercher à comprendre l'influence des variables dans la variance de la population en général, c'est-à-dire à identifier les variables pertinentes qui permettent de séparer des groupes.
 - On pourra s'intéresser également aux facteurs qui influent sur la catégorie du donneur. 
 - On pourra enfin chercher à prédire si le donneur est sain ou pas.
+```
 
-Les techniques pouvant être utilisée dans le cadre de cette étude sont principalement l'ACP, kmeans. Dans le cadre de la recherche de groupes homogènes vis-à-vis de la catégorie, le kmeans pourra être employé. Dans le cadre de la mise en place d'un modèle prédictif, une régression logistique ou un random forest peuvent être envisagés.
-
-## Exercice à rendre
-
-Vous présenterez vos résultats lors de la dernière séance le 4 avril : 20 minutes de présentation
-et 10 minutes de questions.
-Votre présentation devra comporter les parties suivantes :
-- Présentation du contexte et de la question que vous souhaitez poser et répondre
-- Présentation de vos données
-- Présentation de la méthode choisie (pourquoi cette méthode, expliquez succinctement
-son fonctionnement)
-- Présentation des résultats
-- Conclusion
+```{r, child=if (!params$instructions) params$instructions_file}
+```
 
 # Référence
 

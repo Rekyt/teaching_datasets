@@ -3,6 +3,11 @@ title: "Maladies coronaires"
 output:
   pdf_document:
     latex_engine: xelatex
+linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 # Contexte des données
@@ -32,31 +37,18 @@ Nom de la colonne | Type de variable | Description
 
 Pour la variable `num`, on peut considérer les patients `0` comme n'étant pas malade, tandis que les patients de niveau `1`, `2`, et `3` le sont.
 
+```{asis, include = params$questions}
+# Exemple de questions
 
-# Travail demandé
-
-## Objectifs
-
-Plusieurs études peuvent être envisagées :
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
 
 - On pourra chercher à identifier des différences de biomarqueurs en fonction du genre
 - On pourra chercher à identifier l'effet de l'âge dans l'évolution de certains marqueurs
 - On pourra prédire le fait qu'un patient soit sain ou malade à partir des biomarqueurs, en prédisant la gravité de sa maladie
+```
 
-
-## Exercice à rendre
-
-Vous présenterez vos résultats lors de la dernière séance le 4 avril : 20 minutes de présentation
-et 10 minutes de questions.
-Votre présentation devra comporter les parties suivantes :
-
-- Présentation du contexte et de la question que vous souhaitez poser et répondre
-- Présentation de vos données
-- Présentation de la méthode choisie (pourquoi cette méthode, expliquez succinctement
-son fonctionnement)
-- Présentation des résultats
-- Conclusion
-
+```{r, child=if (!params$instructions) params$instructions_file}
+```
 
 
 # Référence

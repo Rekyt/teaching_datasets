@@ -4,6 +4,10 @@ output:
   pdf_document:
     latex_engine: xelatex
 linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 
@@ -44,28 +48,22 @@ La classification TNM est une échelle internationale pour classer les cancers e
 En fonction du cancer étudié, les critères d'évaluation de chaque classe varient. En fonction des niveaux observés sur l'échelle TNM on peut définir un "stade" synthétique du cancer, qui est repris dans la colonne `Stage` (référence pour la classification du cancer de la thyroïde : https://www.pathologyoutlines.com/topic/thyroidstaging.html).
 
 
-# Travail demandé
+```{asis, include = params$questions}
+# Exemple de questions
 
-## Objectifs
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
 
 - On pourra chercher les relations entre biomarqueurs en fonction du stade de la maladie
 - On pourra prédire le stade de maladie en fonction de l'ensemble des variables biologiques
 - On pourra chercher à identifier le rôle que peut jouer le fait de fumer dans la nature des cancer thyroïdiens
+```
 
-Les techniques à mobiliser ici sont surtout les ACM (ou AFDM) étant donné la présence de beaucoup de variables qualitatives, et les arbres de classification pour prédire les catégories d'intérêt.
-Il est possible d'utiliser une régression logistique en simplifiant une des variables en variable binaire.
+<!-- Les techniques à mobiliser ici sont surtout les ACM (ou AFDM) étant donné la présence de beaucoup de variables qualitatives, et les arbres de classification pour prédire les catégories d'intérêt. -->
+<!-- Il est possible d'utiliser une régression logistique en simplifiant une des variables en variable binaire. -->
 
-## Exercice à rendre
+```{r, child=if (!params$instructions) params$instructions_file}
+```
 
-Vous présenterez vos résultats lors de la dernière séance le 4 avril : 20 minutes de présentation
-et 10 minutes de questions.
-Votre présentation devra comporter les parties suivantes :
-- Présentation du contexte et de la question que vous souhaitez poser et répondre
-- Présentation de vos données
-- Présentation de la méthode choisie (pourquoi cette méthode, expliquez succinctement
-son fonctionnement)
-- Présentation des résultats
-- Conclusion
 
 # Références
 

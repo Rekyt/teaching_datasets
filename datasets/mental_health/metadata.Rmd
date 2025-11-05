@@ -4,6 +4,10 @@ output:
   pdf_document:
     latex_engine: xelatex
 linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instruction_file: "instructions.Rmd"
 ---
 
 
@@ -46,6 +50,14 @@ Nom de la colonne      | Type de variable     | Description
 
 L'empathie est un concept complexe qui se déploie selon trois dimensions complémentaires : cognitive, affective et comportementale. L'empathie cognitive correspond à la capacité intellectuelle de comprendre les pensées, perspectives et états mentaux d'autrui, comme si l'on se mettait mentalement à sa place. L'empathie affective, quant à elle, implique la capacité de ressentir émotionnellement ce que l'autre ressent, de partager ses émotions de manière quasi-intuitive et viscérale. Enfin, l'empathie comportementale se traduit par des actions concrètes qui manifestent notre compréhension et notre connexion émotionnelle : il s'agit de la capacité à réagir de manière adaptée et bienveillante face à la situation de l'autre, par des gestes, des attitudes ou des comportements qui démontrent notre souci et notre considération. Ces trois types d'empathie interagissent et se renforcent mutuellement, permettant des interactions sociales plus riches, plus profondes et plus authentiques.
 
+```{asis, include = params$questions}
+# Exemple de questions
+
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
+```
+
+```{r, child=if (!params$instructions) params$instructions_file}
+```
 
 # Références
 

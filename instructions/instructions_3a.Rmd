@@ -1,6 +1,16 @@
 # Travail demandé
 
-## Exercice à rendre
+## Rapport à rendre
 
 Vous réaliserez un court document (4 à 6 pages), introduisant le jeu de données
-et les problématiques que vous vous êtes posées.
+et les problématiques que vous vous êtes posées. Vous ajouterez l'ensemble de votre notebook d'analyse en annexe de votre rapport.
+
+Il n’est pas nécessaire d’analyser toutes les données présentes, vous pouvez vous concentrer sur un sous-ensemble de données.
+
+Votre rapport devra être structuré de la manière suivante :
+
+1. Introduction (présentant le contexte de votre étude et votre problématique)
+2. Préparation des données (présentant des analyses descriptives des données et vos éventuels filtres sur les données)
+3. Résultats (vous réalisez vos analyses et présentez vos résultats)
+4. Discussion (vous recontextualisez vos résultats par rapport à votre problématique, vous en présentez les limites principales) avec une partie "Implications pour la pratique officinale"
+(que signifient vos résultats pour la Pharmacie et votre future pratique ?)
