@@ -38,6 +38,11 @@ Nom de la colonne | Type de variable     | Description
 `GGT`             | Nombre réel          | Taux de γ-glutamyl-transférase dans le sang
 `PROT`            | Nombre réel          | Taux de protéines totales dans le sang
 
+
+# Explications variable `Category`
+
+Les patients sains `0=Blood Donor` ont été recrutés parmi les donneurs de sang de l'hôpital d'Hanovre, c'est pour cela qu'on les appellent _blood donors_. Pour les patients `0s=suspect Blood donor`, il s'agit de patients qui devraient être aussi des donneurs de sang, mais dont on n'est pas sûr du statut car il n'a pas été enregistré correctement.
+
 ```{asis, include = params$questions}
 # Exemple de questions
 
