@@ -1,0 +1,60 @@
+---
+title: "Myopathie de Duchenne"
+output:
+  pdf_document:
+    latex_engine: xelatex
+linkcolor: blue
+params:
+  questions: false
+  instructions: false
+  instructions_file: "../../instructions/instructions_3a.Rmd"
+---
+
+
+# Contexte des données
+
+La myopathie de Duchenne est une dystrophie musculaire qui provoque un affaiblissement progressive des muscles. Elle touche en premier les muscles striés squelettiques comme ceux des membres, elle peut aussi toucher le diaphgrame ou même le cœur, ce qui conduit en général au décès des patients affectés. Du fait que cette maladie soit liée à une anomalie génétique portée sur le chromosome X sur le gène _DMD_, elle touche en majorité des hommes. La mutation du gène _DMD_ entraîne l'absence (ou la diminution) de production de dystrophine, une protéine importante pour le fonctionnement musculaire.
+
+En moyenne, 4,78 personnes pour 100 000 personnes sont touchées par la myopathie de Duchenne qui reste une maladie dite « rare ». Il y aurait donc en France 100 à 150 garçons nouveau-nés atteints de la myopathie de Duchenne chaque année et plus de 3000 personnes atteintes.
+
+Étant donné qu'il s'agit d'une maladie génétique, le diagnostic peut être difficile à poser et ne s'effectue souvent que vers deux ou trois ans, à l'apparition des signes cliniques. Aujourd'hui, on effectue un dosage sanguin de créatine kinase dont le taux faible indique une potentielle maladie.
+
+L'étude présentée ici porte sur sur des patientes afin d'étudier leur probabilité d'être porteuse de la maladie. En effet, du fait qu'elles possèdent deux chromosomes X, elles peuvent être porteuses saines de la maladie. L'objectif est de développer un marqueur fiable de la maladie à l'aide d'une prise de sang et de l'histoire familiale des patients. L'étude mobilise différents marqueurs sanguins, deux marqueurs peu chers à mesurer : la créatine kinase et l'hémopexine et deux marqueurs plus chers à mesurer : la pyruvate kinase et la lactate déshydrogénase.
+
+# Descriptif des données
+
+Chaque observation est identifiée par un identifiant d'hôpital (`hospid`), certaines patientes ont été mesurées deux fois (`obsno = 1`).
+L'étude contient **209 lignes pour 9 colonnes** :
+
+Nom de la colonne      | Type de variable      | Description
+--------               | ----------            | -------------------------------------- 
+`hospid`               | Nombre entier         | Numéro identifiant de la patiente
+`age`                  | Nombre entier         | Âge en années
+`sdate`                | Chaînes de caractères | Date du prélèvement au format AAAA-MM-JJ (**A**nnée, **M**ois, **J**our)
+`ck`                   | Nombre réel           | Dosage de créatine kinase (unité arbitraire)
+`h`                    | Nombre réel           | Dosage de l'hémopexine (unité arbitraire)
+`pk`                   | Nombre réel           | Dosage de la pyruvate kinase (unité arbitraire)
+`ld`                   | Nombre réel           | Dosage de lactate déshydrogénase (unité arbitraire)
+`carrier`              | Nombre entier         | Personne porteuse de la maladie (`0` = non, `1` = oui)
+`obsno`                | Nombre entier         | Numéro de l'observation (`1` = première observation de la patiente, `2` = deuxième observation de la patiente)
+
+
+```{asis, include = params$questions}
+# Exemple de questions
+
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
+
+- Est-ce que les deux marqueurs plus chers à mesurer améliorent la qualité de détection des personnes porteuses ?
+- Est-ce que l'âge et la saison peuvent influencer les niveaux des marqueurs sanguins ?
+- Quelles sont les variables les plus pertinentes pour expliquer le fait d'être porteuse de la myopathie de Duchenne ?
+```
+
+<!-- Chunk qui définit s'il faut ajouter des consignes ou pas -->
+```{r, child=if (params$instructions) params$instructions_file}
+```
+
+# Référence
+
+Andrews, D. F., et A. M. Herzberg. 1985. « Procedures for the Detection of Muscular Dystrophy Carriers ». In Data: A Collection of Problems from Many Fields for the Student and Research Worker, édité par D. F. Andrews et A. M. Herzberg. Springer. https://doi.org/10.1007/978-1-4612-5098-2_39.
+
+Dossier général de l'INSERM sur la myopathie de Duchenne : https://www.inserm.fr/dossier/myopathie-duchenne/
