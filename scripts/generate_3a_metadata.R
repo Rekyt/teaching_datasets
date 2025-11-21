@@ -13,7 +13,7 @@ metadatas |>
 				params = list(
 					questions        = FALSE,
 					instructions     = TRUE,
-					instruction_file = here::here("instructions", "instructions_3a.Rmd")
+					instructions_file = here::here("instructions", "instructions_3a.Rmd")
 				)
 			)
 		}

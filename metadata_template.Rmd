@@ -44,7 +44,7 @@ Ce jeu de données est divers, voici des exemples de questions que vous pouvez v
 ```
 
 <!-- Chunk qui définit s'il faut ajouter des consignes ou pas -->
-```{r, child=if (!params$instructions) params$instructions_file}
+```{r, child=if (params$instructions) params$instructions_file}
 ```
 
 # Référence
