@@ -1,0 +1,55 @@
+---
+title: "Éléments sanguins, âge et genre"
+output:
+  pdf_document:
+    latex_engine: xelatex
+linkcolor: blue
+params:
+  questions: true
+  instructions: false
+  instructions_file: "instructions.Rmd"
+---
+
+
+# Contexte des données
+
+Les taux sériques de calcium, de phosphore et de phosphatase alcaline constituent des marqueurs biologiques essentiels pour évaluer la santé osseuse et le métabolisme minéral, particulièrement chez les personnes âgées. Avec le vieillissement, l'organisme subit des modifications physiologiques importantes qui peuvent affecter l'homéostasie de ces éléments, notamment en raison de changements hormonaux, de variations de l'absorption intestinale, de la fonction rénale et du remodelage osseux. Chez les individus de 65 ans et plus, la surveillance de ces biomarqueurs revêt une importance clinique particulière, car des déséquilibres peuvent être associés à des maladies comme l'ostéoporose, les maladies rénales chroniques ou les troubles endocriniens. De plus, des différences liées au sexe ont été observées dans les niveaux de ces marqueurs chez la population âgée, ce qui souligne la nécessité d'établir des valeurs de référence spécifiques tenant compte à la fois de l'âge et du sexe pour une interprétation clinique appropriée des résultats de laboratoire.
+
+Le jeu de données de Boyd, Delost et Holcomb (1998) a été constitué dans le cadre d'une étude rétrospective visant à déterminer si des différences significatives liées au sexe existaient chez les personnes âgées de 65 ans et plus concernant les taux sériques de calcium, de phosphore inorganique et de phosphatase alcaline. Les données proviennent d'une révision de dossiers médicaux issus de six cabinets médicaux différents et comprennent 178 sujets, dont 92 hommes et 86 femmes, tous âgés de plus de 65 ans. Les participants avaient été référés par leur médecin à un centre de soins cardiaques, et les analyses de laboratoire avaient été effectuées préalablement dans les laboratoires des médecins référents.
+
+
+# Descriptif des données
+
+Ce jeu de données comprend 178 colonnes et 8 lignes:
+
+Nom de la colonne | Type de variable     | Description
+--------          | ----------           | --------------------------------------
+`obsno`           | Nombre entier        | Numéro d'identification du patient
+`age`             | Nombre entier        | Âge en années
+`sex`             | Nombre entier        | Sexe du patient (`1` = homme, `2` = femme)
+`alkphos`         | Nombre entier        | Concentration en phosphatase alkaline sérique (en Unités Internationales ⋅ L⁻¹)
+`lab`             | Nombre entier        | Laboratoire qui a analysé l'échantillon (`1`= Metpath ; `2` = Deyor; `3` = St. Elizabeth's ; `4` = CB Rouche ; `5` = Youngstown Osteopathic Hospital ; `6` = Horizon)
+`cammol`          | Nombre réel          | Concentration en calcium sérique en mmol·L⁻¹
+`phosmmol`        | Nombre réel          | Concentration en phosphore inorganique sérique en mmol·L⁻¹
+`agegroup`        | Nombre entier        | Classe d'âge (`1` = 65-69 ans ; `2` = 70-74 ans ; `3` = 75-79 ans ; `4` = 80-84 ans; `5` = 85-89 ans)
+
+
+```{asis, include = params$questions}
+# Exemple de questions
+
+Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
+
+* Existe-t-il un lien entre le sexe et l'âge pour expliquer la concentration en éléments sanguin ?
+* Les mesures sont-elles affectées par le laboratoire qui les effectue ? Et est-ce que tous les éléments sanguins sont affectés de la même façon ?
+* Dans quelle mesure peut-on prédire l'âge d'un·e patient·e à l'aide de ses éléments sanguins ?
+```
+
+<!-- Chunk qui définit s'il faut ajouter des consignes ou pas -->
+```{r, child=if (params$instructions) params$instructions_file}
+```
+
+# Référence
+
+Boyd, J., Delost, M., and Holcomb, J., (1998), “Calcium, phosphorus, and alkaline phosphatase laboratory values of elderly subjects,” Clinical Laboratory Science, 11, 223-227. 
+
+Article générale sur les troubles de la concentration en calcium :  https://www.msdmanuals.com/fr/professional/troubles-endocriniens-et-m%C3%A9taboliques/troubles-%C3%A9lectrolytiques/revue-g%C3%A9n%C3%A9rale-des-troubles-de-la-concentration-du-calcium
