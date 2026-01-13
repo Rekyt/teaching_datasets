@@ -7,7 +7,7 @@ linkcolor: blue
 params:
   questions: true
   instructions: false
-  instruction_file: "instructions.Rmd"
+  instructions_file: "instructions.Rmd"
 ---
 
 
