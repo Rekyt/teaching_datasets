@@ -90,7 +90,7 @@ Nom de la colonne      | Type de variable     | Description
 Ce jeu de données est divers, voici des exemples de questions que vous pouvez vous poser. Celles-ci ne sont que des **exemples** et vous pouvez décider de traiter bien d'autres questions.
 ```
 
-```{r, child=if (!params$instructions) params$instructions_file}
+```{r, child=if (params$instructions) params$instructions_file}
 ```
 
 # Références

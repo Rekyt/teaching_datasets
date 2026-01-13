@@ -62,7 +62,7 @@ Ce jeu de données est divers, voici des exemples de questions que vous pouvez v
 - On peut quantifier les apports nutritionnels d'un menu "classique" chez une marque ou chez une autre
 ```
 
-```{r, child=if (!params$instructions) params$instructions_file}
+```{r, child=if (params$instructions) params$instructions_file}
 ```
 
 ## Référence

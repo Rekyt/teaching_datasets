@@ -70,7 +70,7 @@ Ce jeu de données est divers, voici des exemples de questions que vous pouvez v
 - On pourra tester dans quelle mesure les identités des praticien·nes ont une influence dans les symptômes de la maladie
 ```
 
-```{r, child=if (!params$instructions) params$instructions_file}
+```{r, child=if (params$instructions) params$instructions_file}
 ```
 
 # Référence

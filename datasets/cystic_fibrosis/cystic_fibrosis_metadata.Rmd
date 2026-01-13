@@ -48,7 +48,7 @@ des groupes.
 points précédents.
 ```
 
-```{r, child=if (!params$instructions) params$instructions_file}
+```{r, child=if (params$instructions) params$instructions_file}
 ```
 
 # Références

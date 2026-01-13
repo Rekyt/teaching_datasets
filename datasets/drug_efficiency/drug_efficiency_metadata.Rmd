@@ -44,7 +44,7 @@ Ce jeu de données est divers, voici des exemples de questions que vous pouvez v
 - On peut tester l'influence du prix sur la satisfaction et la facilité d'utilisation des médicaments
 ```
 
-```{r, child=if (!params$instructions) params$instructions_file}
+```{r, child=if (params$instructions) params$instructions_file}
 ```
 
 # Références

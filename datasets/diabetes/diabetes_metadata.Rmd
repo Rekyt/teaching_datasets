@@ -45,7 +45,7 @@ Ce jeu de données est divers, voici des exemples de questions que vous pouvez v
 - On pourra contraster ces résultats par catégorie d'âge
 ```
 
-```{r, child=if (!params$instructions) params$instructions_file}
+```{r, child=if (params$instructions) params$instructions_file}
 ```
 
 # Référence

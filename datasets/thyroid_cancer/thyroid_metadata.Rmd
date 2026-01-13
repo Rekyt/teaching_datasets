@@ -61,7 +61,7 @@ Ce jeu de données est divers, voici des exemples de questions que vous pouvez v
 <!-- Les techniques à mobiliser ici sont surtout les ACM (ou AFDM) étant donné la présence de beaucoup de variables qualitatives, et les arbres de classification pour prédire les catégories d'intérêt. -->
 <!-- Il est possible d'utiliser une régression logistique en simplifiant une des variables en variable binaire. -->
 
-```{r, child=if (!params$instructions) params$instructions_file}
+```{r, child=if (params$instructions) params$instructions_file}
 ```
 
 

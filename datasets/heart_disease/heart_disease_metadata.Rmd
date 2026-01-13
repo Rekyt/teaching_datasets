@@ -47,7 +47,7 @@ Ce jeu de données est divers, voici des exemples de questions que vous pouvez v
 - On pourra prédire le fait qu'un patient soit sain ou malade à partir des biomarqueurs, en prédisant la gravité de sa maladie
 ```
 
-```{r, child=if (!params$instructions) params$instructions_file}
+```{r, child=if (params$instructions) params$instructions_file}
 ```
 
 

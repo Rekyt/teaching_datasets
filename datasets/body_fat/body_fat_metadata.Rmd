@@ -58,7 +58,7 @@ $$
 - On pourra enfin voir les structurations des variables du corps en fonction de l'âge
 ```
 
-```{r, child=if (!params$instructions) params$instructions_file}
+```{r, child=if (params$instructions) params$instructions_file}
 ```
 
 # Référence

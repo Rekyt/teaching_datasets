@@ -59,7 +59,7 @@ Ce jeu de données est divers, voici des exemples de questions que vous pouvez v
 — On pourra s'intéresser aux associations entre biomarqueurs et signes cliniques catégoriels d'une maladie, en association avec les stades histologiques
 ```
 
-```{r, child=if (!params$instructions) params$instructions_file}
+```{r, child=if (params$instructions) params$instructions_file}
 ```
 
 # Référence
